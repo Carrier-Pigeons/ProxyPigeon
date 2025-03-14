@@ -1,6 +1,6 @@
-#Evilginx
+# Evilginx
 
-The Evilginx binary was simply run manually within a tmux window to prevent it from exiting upon terminating it's parent SSH session. 
+The Evilginx binary was run manually within a tmux window to prevent it from exiting upon terminating its parent SSH session. 
 
 Make sure your configuration file is placed in ./phishlets/configName.yaml, relative to the Evilginx binary itself. The example "fingerprint.yml" configuration can be used by replacing all instances of "fingerprint" or "byu.edu" with your target subdomain and domain respectively, and by replacing "evilginx" with your proxy subdomain. The "path" configuration line determines where the user lands when navigating to the proxy domain. 
 
