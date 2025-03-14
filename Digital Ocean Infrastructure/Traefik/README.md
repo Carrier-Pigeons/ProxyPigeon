@@ -11,7 +11,7 @@ Place all configuration files in the root user's home directory (same folder str
 
 Place the Podman quadlet file in /etc/containers/systemd/ (again, same folder structure as in GitHub). Reload systemctl daemon so that it sees the new Podman quadlet file:
 ```
-sudo systemctl daemlon-reload
+sudo systemctl daemon-reload
 ```
 
 Enable and start the service created by the Podman quadlet:
