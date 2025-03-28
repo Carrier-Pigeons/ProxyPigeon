@@ -1,0 +1,11 @@
+[Unit]
+Description=Modlishka Proxy
+Wants=network.target
+
+[Service]
+ExecStart=/root/modlishka/proxy_linux -config /root/modlishka/modlishka.json
+WorkingDirectory=/root/modlishka
+Restart=always
+
+[Install]
+WantedBy=default.target

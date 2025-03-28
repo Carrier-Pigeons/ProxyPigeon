@@ -1,0 +1,14 @@
+http:
+  routers:
+    fingerprint:
+      entryPoints:
+        - "https"
+      rule: "Host(`traefik.httpcarrierpigeons.xyz`)"
+      tls:
+        certResolver: tlschallenge
+      service: fingerprint
+  services:
+    fingerprint:
+      loadBalancer:
+        servers:
+          - url: "https://128.187.49.100:443"
