@@ -18,12 +18,8 @@ In order to verify that the HTTP header changes we identified could be used to d
 
 * [/yara/](./yara/) - Documentation for our experimental yara rule test site.  
 
-## Other Important Links
+## Other Important Repos
 
-TODO: Talk to Todd about each of these
+* [yara_rule_tester](https://github.com/Carrier-Pigeons/yara_rule_tester) - All of our yara rules, and the python scripts needed to test the rules against our database of requests.
 
-* https://github.com/ddotstone/mod_http_fingerprint_log
-
-* https://github.com/ddotstone/yara_rule_tester
-
-* https://github.com/ddotstone/mod_http_headers
+* [mod_http_fingerprint_log](https://github.com/Carrier-Pigeons/mod_http_fingerprint_log) - Our custom Apache module for logging HTTP headers along with SSL data
