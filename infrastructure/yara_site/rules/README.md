@@ -1,0 +1,1 @@
+These rules are not currently up to date! Please check the yara testing repo for updated rules. 
