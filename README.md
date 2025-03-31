@@ -16,8 +16,6 @@ In order to verify that the HTTP header changes we identified could be used to d
 
 * [/infrastructure/](./infrastructure/) - Documentation on our testing infrastructure. The goal is that anyone could use this to recreate our setup.  
 
-* [/yara/](./yara/) - Documentation for our experimental yara rule test site.  
-
 ## Other Important Repos
 
 * [yara_rule_tester](https://github.com/Carrier-Pigeons/yara_rule_tester) - All of our yara rules, and the python scripts needed to test the rules against our database of requests.

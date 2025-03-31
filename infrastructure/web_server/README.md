@@ -55,7 +55,7 @@ sudo systemctl restart apache2
 
 ## Set Up Header Logging
 
-TODO: Instructions for Todd's mod
+Please see [mod_http_fingerprint_log](https://github.com/Carrier-Pigeons/mod_http_fingerprint_log) for code and instructions. 
 
 ## Install Wordpress And Dependencies
 
@@ -75,8 +75,6 @@ sudo apt install ghostscript \
                  php-xml \
                  php-zip
 ```
-
-TODO: Setting up the database
 
 Download the latest version of wordpress, then unzip it and copy it to `/var/www`:  
 ```
@@ -102,6 +100,8 @@ sudo chgrp -R www-data wordpress
 
 sudo chown -R www-data wordpress
 ```
+
+Now navigate to your website, and complete the setup from there!
 
 # Echo Server
 
