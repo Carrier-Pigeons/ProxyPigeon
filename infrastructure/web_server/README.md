@@ -59,7 +59,9 @@ Please see [mod_http_fingerprint_log](https://github.com/Carrier-Pigeons/mod_htt
 
 ## Install Wordpress And Dependencies
 
-The following command can be used to install the wordpress dependencies:  
+You can find many online tutorials explaining how to set up vanilla Wordpress, but these instructions should get you started. 
+
+The following command can be used to install the Wordpress dependencies:  
 ```
 sudo apt install ghostscript \
                  libapache2-mod-php \
@@ -76,7 +78,7 @@ sudo apt install ghostscript \
                  php-zip
 ```
 
-Download the latest version of wordpress, then unzip it and copy it to `/var/www`:  
+Download the latest version of Wordpress, then unzip it and copy it to `/var/www`:  
 ```
 wget https://wordpress.org/latest.zip
 
@@ -102,6 +104,60 @@ sudo chown -R www-data wordpress
 ```
 
 Now navigate to your website, and complete the setup from there!
+
+# Proxy Testing Page
+
+We built a custom proxy testing page on Wordpress that makes sending requests to the echo server easily. Start with a basic new Wordpress page, then follow these instructions. 
+
+## Create Links
+
+Add a block of buttons to the page. Create a button for each proxy to be tested, and link said button to the header testing page through the proxy. For example, the mitmproxy button would be linked to https://mitmproxy.httpcarrierpigeons.xyz/header-testing. 
+
+## Create Forms
+
+Create three HTML blocks and insert the following code into them. Using the HTML blocks is essential because Wordpress uses absolute links, but in order to get to the echo server through the proxies you must use relative links. 
+
+### Normal GET Request
+```html
+<pre><a href="/echo/">Echo Site</a></pre>
+```
+
+### Complex GET Request
+```html
+<form action="/echo/" method="get">
+
+  <label for="zwhyisthatzthere">Any random text here:</label>
+  <input type="text" id="zwhyisthatzthere" name="zwhyisthatzthere"><br><br>
+
+  <label for="secondquery">Any random text here (again):</label>
+  <input type="text" id="secondquery" name="secondquery"><br><br>
+
+  <label for="thirdquery">Any random text here (again again):</label>
+  <input type="text" id="thirdquery" name="thirdquery"><br><br>
+  
+  <label for="options">Standard dropdown:</label>
+  <select id="options" name="options">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select><br><br>
+  
+  <input type="submit" value="Search">
+</form>
+```
+
+### POST Request
+```html
+<form action="/echo/" method="post">
+  <label for="field1">Field 1:</label>
+  <input type="text" id="field1" name="field1"><br><br>
+  
+  <label for="field2">Field 2:</label>
+  <input type="text" id="field2" name="field2"><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+```
 
 # Echo Server
 
