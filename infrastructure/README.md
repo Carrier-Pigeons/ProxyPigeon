@@ -9,8 +9,15 @@ We created a custom logging module for the Apache wordpress server as well. This
 ## Security/Legal
 The default configurations for some proxies harvest credentials. Make sure to turn these off. Users could put us in legal trouble if we do not do so.
 
+# BYU wordpress website
+We set up a wordpress website on a server obtained from the CSR.
+
 ## Website Certificates blocked by BYU's firewall
 BYU's firewall, and quirks within some proxies, caused some difficulties getting TLS certificates. See [Certificates.md](Certificates.md) for more info.
+
+## ssh
+The BYU soc requested that we set up ssh on port 1337. They only allowed ssh on the internal network (the firewall blocked it on the external network), so we had to vpn into itc-vpn.byu.edu (the network our server was located at) using GlobalProtect.
+There was an issue that ssh would not work when we had two NICs (the public and private NIC) on the web server. The ssh request would go to the server on the internal network but then be sent out to the void on the public network. To fix this we had to set up a static route so that all 10.0.0.0/8 traffic went out the NIC connected to the internal network.
 
 # CTFs in Digital Ocean
 We are setting up our proxies using VMs in Digital Ocean for the CTFs. 
